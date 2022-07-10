@@ -1,0 +1,24 @@
+diff -ur a/protocol/protocol-icon.vala b/protocol/protocol-icon.vala
+--- a/protocol/protocol-icon.vala	2022-07-09 20:53:42.769515850 -0600
++++ b/protocol/protocol-icon.vala	2022-07-09 20:54:59.709345360 -0600
+@@ -185,7 +185,7 @@
+   }
+
+   /* Added to GIcon interface in 2.37 */
+-  private Variant serialize ()
++  private Variant? serialize ()
+   {
+     Variant? ret = null;
+     return ret;
+diff -ur a/src/unity-scope-channel.vala b/src/unity-scope-channel.vala
+--- a/src/unity-scope-channel.vala	2022-07-10 03:14:52.509917691 -0600
++++ b/src/unity-scope-channel.vala	2022-07-10 03:14:50.513894784 -0600
+@@ -312,7 +312,7 @@
+           DBusSignalFlags.NONE, this.owner_changed);
+     }
+
+-    private void owner_changed (DBusConnection con, string sender_name,
++    private void owner_changed (DBusConnection con, string? sender_name,
+                                 string obj_path, string ifc_name,
+                                 string sig_name, Variant parameters)
+     {
